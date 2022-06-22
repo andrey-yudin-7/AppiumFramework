@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-06T21:24:31 YEKT" name="Parlles Test Suite" finished-at="2022-06-06T21:24:31 YEKT" duration-ms="0">
+    <groups>
+      <group name="Regression">
+        <method signature="Ecommerce_tc_3.main(java.lang.String)[pri:0, instance:ecommerceApp.Ecommerce_tc_3@2254127a]" name="main" class="ecommerceApp.Ecommerce_tc_3"/>
+        <method signature="Ecommerce_tc_4.totalValidation(java.lang.String)[pri:0, instance:ecommerceApp.Ecommerce_tc_4@51891008]" name="totalValidation" class="ecommerceApp.Ecommerce_tc_4"/>
+        <method signature="Ecommerce_tc_5.totalValidation(java.lang.String)[pri:0, instance:ecommerceApp.Ecommerce_tc_5@5a7fe64f]" name="totalValidation" class="ecommerceApp.Ecommerce_tc_5"/>
+      </group> <!-- Regression -->
+      <group name="Smoke">
+        <method signature="Ecommerce_tc_1.main(java.lang.String)[pri:0, instance:ecommerceApp.Ecommerce_tc_1@5b799640]" name="main" class="ecommerceApp.Ecommerce_tc_1"/>
+        <method signature="Ecommerce_tc_2.main(java.lang.String)[pri:0, instance:ecommerceApp.Ecommerce_tc_2@48e1f6c7]" name="main" class="ecommerceApp.Ecommerce_tc_2"/>
+      </group> <!-- Smoke -->
+    </groups>
+  </suite> <!-- Parlles Test Suite -->
+</testng-results>
