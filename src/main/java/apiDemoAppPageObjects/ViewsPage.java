@@ -24,6 +24,4 @@ public class ViewsPage {
 	
 	@FindBy(xpath="//android.widget.TextView[@text='Date Widgets']")
 	public WebElement dateWidgets;
-	
-	
 }

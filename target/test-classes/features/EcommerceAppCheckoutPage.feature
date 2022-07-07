@@ -1,6 +1,7 @@
 Feature: Checkout page form
 
-Scenario: Validate selected item on checkout page
+@Regression @CheckoutPage
+Scenario Outline: Validate selected item on checkout page
     Given User is on Products page
     And scrolling to the product with the name <productName>
     When User adding 1 product <productName>
@@ -11,8 +12,9 @@ Scenario: Validate selected item on checkout page
     Examples:
     |productName	 |
     |Jordan 6 Rings|
-
-Scenario Outline: Validate the total amount of selected products matching on checkout page
+    
+@Smoke @CheckoutPage
+Scenario: Validate the total amount of selected products matching on checkout page
     Given User is on Products page
     And adding first 2 products from the list
     When User clicking on Cart button

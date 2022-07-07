@@ -2,34 +2,42 @@ package resources;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import practise.AppiumFramework.base;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class Listeners extends base implements ITestListener {
-	
-//	ExtentReports extent = ExtentReporterNG.getReportObject();
-//	ExtentTest test;
-//	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	private static ExtentReports extent = ExtentReportManager.createInstance();
+	ExtentTest test;
+	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	public static Logger log = LogManager.getLogger(Listeners.class.getName());
 	
     @Override		
-    public void onTestStart(ITestResult arg0) {					
-//    	test = extent.createTest("Initial Demo");
-//    	extentTest.set(test);
+    public void onTestStart(ITestResult result) {					
+    	ExtentTest test = extent.createTest(result.getClass().getName() + " :: " + result.getMethod().getMethodName());
+    	extentTest.set(test);
 		log.debug("killing nodes");
 		try {
 			Runtime.getRuntime().exec("taskkill /F /IM node.exe");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			log.info("Killing nodes failed");
 		}
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		log.debug("Starting the server");
@@ -40,7 +48,9 @@ public class Listeners extends base implements ITestListener {
 	
 	@Override		
     public void onFinish(ITestContext arg0) {					
-		//extent.flush();	
+		if (extent !=null) {
+			extent.flush();	
+		}	
 		log.debug("Stopping the server");
 		service.stop();
 		log.info("Server stopped");
@@ -64,35 +74,46 @@ public class Listeners extends base implements ITestListener {
         		
     }		
 
-    @Override		
+    @SuppressWarnings("unchecked")
+	@Override		
     public void onTestFailure(ITestResult result) {					
-        // TODO Auto-generated method stub		
-		//screenshot 
 		String s=result.getName();
-		try {
-		base.getScreenshot(s);
+    	extentTest.get().fail(result.getThrowable());
+
+    	String testMethodName = result.getMethod().getMethodName();
+    	
+    	try {
+			driver = (AndroidDriver<AndroidElement>)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+		} catch(Exception e)
+    	{
+			
+    	}
+    	try {
+    		extentTest.get().addScreenCaptureFromPath(getScreenshot(s), result.getMethod().getMethodName());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Log.error("Cannot get a screenshot"); 
+			extentTest.get().fail("Test failed, cannot attach screenshot");
+			log.error("Test failed, cannot attach screenshot");
 		}
-		System.out.println("Test failed....Attention! Test name: " + result.getName());
+    	
+    	String logText = "<b> Test Method " + testMethodName + " Failed</b>";
+    	Markup m = (Markup) MarkupHelper.createLabel(logText, ExtentColor.RED);
+    	extentTest.get().log(Status.FAIL, m);
+    	log.error("Test failed....Attention! Test name: " +result.getName());
         		
     }		
 
     @Override		
     public void onTestSkipped(ITestResult result) {					
-        // TODO Auto-generated method stub
-
-        		
+    	String logText = "<b> Test Method " + result.getMethod().getMethodName() + " Skipped<b>";
+    	Markup m = (Markup) MarkupHelper.createLabel(logText, ExtentColor.YELLOW);
+    	extentTest.get().log(Status.SKIP, m);
     }		
 
     @Override		
-    public void onTestSuccess(ITestResult arg0) {					
-        // TODO Auto-generated method stub
-    	//as example reports
-    	//extentTest.get().log(Status.PASS, "Test passed");
-    	
+    public void onTestSuccess(ITestResult result) {					
+    	String logText = "<b> Test Method " + result.getMethod().getMethodName() + " Successfull<b>";
+    	Markup m = (Markup) MarkupHelper.createLabel(logText, ExtentColor.GREEN);
+    	extentTest.get().log(Status.PASS, m);
     }
 
 }

@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="practise.AppiumFramework.ApiDemoTest" duration-ms="40430" started-at="2022-05-30T15:25:43 YEKT" finished-at="2022-05-30T15:26:23 YEKT">
+  <suite name="Command line suite" duration-ms="60205" started-at="2022-07-06T22:46:37 YEKT" finished-at="2022-07-06T22:47:37 YEKT">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestRunnerTestNg@38bc8ab5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test name="Command line test" duration-ms="40430" started-at="2022-05-30T15:25:43 YEKT" finished-at="2022-05-30T15:26:23 YEKT">
-      <class name="practise.AppiumFramework.ApiDemoTest">
-        <test-method status="PASS" signature="apiDemo(java.lang.String)[pri:0, instance:practise.AppiumFramework.ApiDemoTest@307f6b8c]" name="apiDemo" duration-ms="20245" started-at="2022-05-30T15:25:43 YEKT" data-provider="InputData" finished-at="2022-05-30T15:26:03 YEKT">
+    <test name="Command line test" duration-ms="60205" started-at="2022-07-06T22:46:37 YEKT" finished-at="2022-07-06T22:47:37 YEKT">
+      <class name="cucumber.TestRunnerTestNg">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.TestRunnerTestNg@38bc8ab5]" name="setUpClass" is-config="true" duration-ms="563" started-at="2022-07-06T22:46:37 YEKT" finished-at="2022-07-06T22:46:38 YEKT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[hello]]>
+                <![CDATA[org.testng.TestRunner@3b0c3951]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- apiDemo -->
-        <test-method status="PASS" signature="apiDemo(java.lang.String)[pri:0, instance:practise.AppiumFramework.ApiDemoTest@307f6b8c]" name="apiDemo" duration-ms="20162" started-at="2022-05-30T15:26:03 YEKT" data-provider="InputData" finished-at="2022-05-30T15:26:23 YEKT">
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestRunnerTestNg@38bc8ab5]" name="runScenario" duration-ms="58633" started-at="2022-07-06T22:46:38 YEKT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-06T22:47:36 YEKT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[buy]]>
+                <![CDATA["Validate the total amount of selected products matching on checkout page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checkout page form"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- apiDemo -->
-      </class> <!-- practise.AppiumFramework.ApiDemoTest -->
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:cucumber.TestRunnerTestNg@38bc8ab5]" name="tearDownClass" is-config="true" duration-ms="990" started-at="2022-07-06T22:47:36 YEKT" finished-at="2022-07-06T22:47:37 YEKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- cucumber.TestRunnerTestNg -->
     </test> <!-- Command line test -->
-  </suite> <!-- practise.AppiumFramework.ApiDemoTest -->
+  </suite> <!-- Command line suite -->
 </testng-results>

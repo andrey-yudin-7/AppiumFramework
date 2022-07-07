@@ -13,7 +13,6 @@ public class CheckoutPage {
 	
 	public CheckoutPage(AppiumDriver<AndroidElement> driver) throws NoSuchFieldException
 	{
-//		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
 		PageFactory.initElements(driver, this);
 	}
 	

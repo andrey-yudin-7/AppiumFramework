@@ -23,6 +23,4 @@ public class ExpandableListsPage {
 	
 	@FindBy(id="android:id/title")
 	public WebElement sampleMenu;
-
-
 }

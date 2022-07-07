@@ -10,8 +10,4 @@
 			<class name="cucumber.TestRunnerTestNg" />
 		</classes>
 	</test>
-</suite> <!-- Suite -->
-
-
-
-
+</suite>

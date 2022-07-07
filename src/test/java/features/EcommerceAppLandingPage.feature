@@ -1,6 +1,7 @@
 Feature: Landing page form
 
-Scenario: Landing page default login without the name
+@Regression @LandingPage
+Scenario Outline: Landing page default login without the name
     Given User is on General Store landing page
     When User choosing his country <country> from dropdown
     And and his Gender <gender> from checkboxes
@@ -10,7 +11,8 @@ Scenario: Landing page default login without the name
     Examples:
     |country	 |gender	|
     |Argentina |male  	|
-
+    
+@Smoke @LandingPage
 Scenario Outline: Landing page default login with the name
     Given User is on General Store landing page
     When User choosing his country <country> from dropdown

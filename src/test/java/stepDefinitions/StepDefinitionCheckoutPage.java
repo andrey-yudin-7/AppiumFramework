@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.testng.Assert;
 
@@ -13,12 +15,13 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.junit.Cucumber;
-import practise.AppiumFramework.base;
+import resources.base;
 
 //Ecommerce_tc_5
 @RunWith(Cucumber.class)
 public class StepDefinitionCheckoutPage extends base{
-    
+	public static Logger log = LogManager.getLogger(StepDefinitionCheckoutPage.class.getName());
+	
     @Then("^User successfully getting to Checkout page with 2 products$")
     public void user_successfully_getting_to_checkout_page() throws Throwable {
 		CheckoutPage checkoutPage = new CheckoutPage(driver);

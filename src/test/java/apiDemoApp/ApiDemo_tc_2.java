@@ -1,6 +1,8 @@
 package apiDemoApp;
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -8,30 +10,31 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import apiDemoAppPageObjects.DependenciesPage;
 import apiDemoAppPageObjects.HomePage;
-import apiDemoAppPageObjects.Preferences;
-import practise.AppiumFramework.base;
+import apiDemoAppPageObjects.PreferencesPage;
+import resources.base;
 
 @Listeners(resources.Listeners.class) 
 public class ApiDemo_tc_2 extends base{
+	public static Logger log = LogManager.getLogger(ApiDemo_tc_2.class.getName());
 
-	@Test
-	public void main() throws IOException, NoSuchFieldException, InterruptedException  {
+	@Test(groups={"Smoke"})
+	public void dependenciesPageInputValidation() throws IOException, NoSuchFieldException, InterruptedException  {
 		
-		//Basics test
 		AndroidDriver<AndroidElement> driver = runCapabilities("ApiDemosApp", false);
 		
-		HomePage h = new HomePage(driver);
-		h.Preferences.click();
+		HomePage homePage = new HomePage(driver);
+		homePage.Preferences.click();
+		log.debug("Clicked Preferencies Link");
 		
-		Preferences p = new Preferences(driver);
-
-		p.dependencies.click();
+		PreferencesPage preferencesPage = new PreferencesPage(driver);
+		preferencesPage.dependencies.click();
+		log.debug("Clicked Dependencies Link");
 		
-		DependenciesPage d = new DependenciesPage(driver);
+		DependenciesPage dependenciesPage = new DependenciesPage(driver);
 		
-		d.checkbox.click();
-		d.settings.click();
-		d.editTextField.sendKeys("hello");
-		d.buttons.get(1).click();
+		dependenciesPage.checkbox.click();
+		dependenciesPage.settings.click();
+		dependenciesPage.editTextField.sendKeys("hello");
+		dependenciesPage.buttons.get(1).click();
 	}
 }

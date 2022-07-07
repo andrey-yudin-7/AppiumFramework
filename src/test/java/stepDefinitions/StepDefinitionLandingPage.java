@@ -2,7 +2,8 @@ package stepDefinitions;
 
 import java.io.IOException;
 
-import org.junit.Test;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.testng.Assert;
 
@@ -17,14 +18,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
-import practise.AppiumFramework.Utilities;
-import practise.AppiumFramework.base;
+import resources.Utilities;
+import resources.base;
 
 //Ecommerce_tc_2
 @RunWith(Cucumber.class)
 public class StepDefinitionLandingPage extends base{
+	public static Logger log = LogManager.getLogger(StepDefinitionLandingPage.class.getName());
     
-	@Test
     @Given("^User is on General Store landing page$")
     public void user_is_on_general_store_landing_page() throws Throwable {
 

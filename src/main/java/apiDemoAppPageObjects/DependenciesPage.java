@@ -13,7 +13,6 @@ public class DependenciesPage {
 	
 	public DependenciesPage(AppiumDriver<AndroidElement> driver)
 	{
-//		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 		 PageFactory.initElements(driver, this);
 	}
 
@@ -28,5 +27,4 @@ public class DependenciesPage {
 	
 	@FindBy(className="android.widget.Button")
 	public List<WebElement> buttons;
-
 }
