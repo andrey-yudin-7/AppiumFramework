@@ -116,3 +116,8 @@
 [INFO ] 2022-07-07 22:25:16.789 [main] Listeners - Server started
 [DEBUG] 2022-07-07 22:25:30.860 [main] ApiDemo_tc_1 - Clicked Preferencies Link
 [DEBUG] 2022-07-07 22:25:31.669 [main] ApiDemo_tc_1 - Clicked Dependencies Link
+[DEBUG] 2022-07-07 22:45:19.478 [main] Listeners - killing nodes
+[DEBUG] 2022-07-07 22:45:22.493 [main] Listeners - Starting the server
+[INFO ] 2022-07-07 22:45:24.621 [main] Listeners - Server started
+[DEBUG] 2022-07-07 22:45:40.010 [main] ApiDemo_tc_1 - Clicked Preferencies Link
+[DEBUG] 2022-07-07 22:45:40.824 [main] ApiDemo_tc_1 - Clicked Dependencies Link
