@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		stepNotifications = true,
-		features = "src/test/java/features/EcommerceAppCheckoutPage.feature",
+		features = "src/test/java/features",
 		monochrome = true,
 		plugin = {
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

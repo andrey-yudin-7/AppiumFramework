@@ -37,14 +37,12 @@ public class FormPage {
 	
 	public WebElement getNameField()
 	{
-		//if we need some log or an additional step then it is better to create a method
 		log.debug("Trying to find the Name field");
 		return nameField;
 	}
 	
 	public WebElement getCountrySelection()
 	{
-		//if we need some log or an additional step then it is better to create a method
 		log.debug("Trying to find Country field");
 		return countryDropDown;
 	}

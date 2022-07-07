@@ -90,9 +90,6 @@ public class base {
 			device = (String) prop.get("device");
 		}
 
-		
-//		String device = System.getProperty("deviceName");
-
 		if (device.contains("emulator")) {
 			startEmulator();
 		}
