@@ -95,3 +95,24 @@
 [INFO ] 2022-07-07 21:35:16.281 [main] Ecommerce_tc_5 - Successfully validated Products sum
 [DEBUG] 2022-07-07 21:35:16.300 [main] Listeners - Stopping the server
 [INFO ] 2022-07-07 21:35:16.360 [main] Listeners - Server stopped
+[DEBUG] 2022-07-07 22:21:07.557 [main] Listeners - killing nodes
+[DEBUG] 2022-07-07 22:21:10.581 [main] Listeners - Starting the server
+[INFO ] 2022-07-07 22:21:12.527 [main] Listeners - Server started
+[DEBUG] 2022-07-07 22:21:26.644 [main] ApiDemo_tc_1 - Clicked Preferencies Link
+[DEBUG] 2022-07-07 22:21:27.456 [main] ApiDemo_tc_1 - Clicked Dependencies Link
+[DEBUG] 2022-07-07 22:21:30.012 [main] Listeners - killing nodes
+[DEBUG] 2022-07-07 22:21:33.022 [main] Listeners - Starting the server
+[INFO ] 2022-07-07 22:21:34.863 [main] Listeners - Server started
+[DEBUG] 2022-07-07 22:21:48.860 [main] ApiDemo_tc_1 - Clicked Preferencies Link
+[DEBUG] 2022-07-07 22:21:49.681 [main] ApiDemo_tc_1 - Clicked Dependencies Link
+[DEBUG] 2022-07-07 22:21:51.587 [main] Listeners - killing nodes
+[DEBUG] 2022-07-07 22:21:54.595 [main] Listeners - Starting the server
+[INFO ] 2022-07-07 22:21:56.500 [main] Listeners - Server started
+[DEBUG] 2022-07-07 22:22:10.557 [main] ApiDemo_tc_2 - Clicked Preferencies Link
+[DEBUG] 2022-07-07 22:22:11.443 [main] ApiDemo_tc_2 - Clicked Dependencies Link
+[DEBUG] 2022-07-07 22:22:14.007 [main] Listeners - killing nodes
+[DEBUG] 2022-07-07 22:25:11.831 [main] Listeners - killing nodes
+[DEBUG] 2022-07-07 22:25:14.847 [main] Listeners - Starting the server
+[INFO ] 2022-07-07 22:25:16.789 [main] Listeners - Server started
+[DEBUG] 2022-07-07 22:25:30.860 [main] ApiDemo_tc_1 - Clicked Preferencies Link
+[DEBUG] 2022-07-07 22:25:31.669 [main] ApiDemo_tc_1 - Clicked Dependencies Link
